@@ -148,7 +148,7 @@ def zip_code_page():
                             st.write(f"**Técnico mais próximo:** {closest_tech}")
                             # Adiciona a nova linha com o tipo de atendimento
                             service_type = closest_tech_info.get('tipo_atendimento', 'Não especificado')
-                            st.write(f"**Tipo de Atendimento:** {service_type}")
+                            st.write(f"**Restrições:** {service_type}")
                         else:
                             st.write("**Técnico mais próximo:** Não foi possível determinar (Zip Code(s) de origem ausente(s) ou inválido(s) para os técnicos disponíveis)")
 
@@ -172,7 +172,7 @@ def zip_code_page():
         saved_data = load_tech_data()
         st.session_state.tech_data = saved_data if saved_data else [{"nome": "", "categoria": "", "tipo_atendimento": "", "zip_code": "", "cidades": []}]
 
-    st.info("Insira o nome do técnico, sua categoria, tipo de atendimento, seu Zip Code de origem e as cidades onde ele realiza atendimentos. Você pode adicionar novas cidades digitando no campo e pressionando Enter.")
+    st.info("Insira o nome do técnico, sua categoria, restrições, seu Zip Code de origem e as cidades onde ele realiza atendimentos. Você pode adicionar novas cidades digitando no campo e pressionando Enter.")
 
     # Cabeçalho da tabela de cadastro com a nova coluna
     header_cols = st.columns([0.2, 0.15, 0.15, 0.15, 0.25, 0.1])
@@ -181,7 +181,7 @@ def zip_code_page():
     with header_cols[1]:
         st.markdown("**Categoria**")
     with header_cols[2]:
-        st.markdown("**Tipo de Atendimento**")
+        st.markdown("**Restrições**")
     with header_cols[3]:
         st.markdown("**Zip Code de Origem**")
     with header_cols[4]:
@@ -212,12 +212,9 @@ def zip_code_page():
             )
 
         with cols[2]:
-            # Adiciona o seletor para Tipo de Atendimento
-            opcoes_atendimento = ["", "Apenas cachorros", "Apenas gatos", "Apenas pequenos", "Apenas pequenos e médios", "Apenas grandes", "Todos"]
-            entry["tipo_atendimento"] = st.selectbox(
-                "Tipo de Atendimento",
-                options=opcoes_atendimento,
-                index=opcoes_atendimento.index(entry.get("tipo_atendimento", "")),
+            entry["tipo_atendimento"] = st.text_input(
+                "Restrições",
+                value=entry.get("tipo_atendimento", ""),
                 key=f"tech_atendimento_{i}",
                 label_visibility="collapsed"
             )
