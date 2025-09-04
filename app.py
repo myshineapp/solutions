@@ -22,6 +22,7 @@ from modules.payroll_module import payroll_page
 from modules.verificacao_zip_codes import zip_code_page
 from modules.limpeza_numeros import limpeza_numeros_page
 from modules.franchises_module import franchises_page
+from modules.home_page import home_page
 
 
 def local_css():
@@ -252,7 +253,7 @@ def main():
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
     if 'selected_page' not in st.session_state:
-        st.session_state.selected_page = "Análises Financeiras"
+        st.session_state.selected_page = "Início"
 
     # Sidebar com menu de opções
     with st.sidebar:
@@ -264,8 +265,8 @@ def main():
 
         st.session_state.selected_page = option_menu(
             menu_title=None,
-            options=["Análises Financeiras", "Payroll dos Técnicos", "Franchises", "Limpeza de Números", "Zip Codes"],
-            icons=["star", "star", "star", "star", "star"],
+            options=["Início", "Análises Financeiras", "Payroll dos Técnicos", "Franchises", "Limpeza de Números", "Zip Codes"],
+            icons=["star", "star", "star", "star", "star", "star"],
             menu_icon="cast",
             default_index=0,
             styles={
@@ -326,7 +327,9 @@ def main():
             st.stop()
             
     # Exibição da página selecionada
-    if st.session_state.selected_page == "Análises Financeiras":
+    if st.session_state.selected_page == "Início":
+        home_page()
+    elif st.session_state.selected_page == "Análises Financeiras":
         financial_analysis_page(filtered_data)
     elif st.session_state.selected_page == "Payroll dos Técnicos":
         payroll_page(filtered_data)
