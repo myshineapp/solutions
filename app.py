@@ -258,18 +258,18 @@ def main():
     with st.sidebar:
         st.markdown("""
         <div style="text-align: center; margin-bottom: 20px;">
-            <img src="https://i.imgur.com/tlb2Bcy.png" alt="Logo da Empresa" width="200">
+            <img src="https://i.imgur.com/50oBRbq.png" alt="Logo da Empresa" width="200">
         </div>
         """, unsafe_allow_html=True)
 
         st.session_state.selected_page = option_menu(
             menu_title=None,
             options=["Análises Financeiras", "Payroll dos Técnicos", "Franchises", "Limpeza de Números", "Zip Codes"],
-            icons=["bar-chart", "cash-stack", "building", "phone", "geo-alt"],
+            icons=["star", "star", "star", "star", "star"],
             menu_icon="cast",
             default_index=0,
             styles={
-                "nav-link-selected": {"background-color": "#000000"},
+                "nav-link-selected": {"background-color": "#f65a93"},
             }
         )
 
