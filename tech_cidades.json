@@ -138,7 +138,7 @@
         ],
         "zip_code": "33764",
         "categoria": "Central",
-        "tipo_atendimento": "Apenas cachorros"
+        "tipo_atendimento": "Não faz Great Dane, Não vai Gulfport"
     },
     {
         "nome": "David Medeiros de Souza Gonzaga",
@@ -176,7 +176,7 @@
         ],
         "zip_code": "33063",
         "categoria": "Central",
-        "tipo_atendimento": "Todos"
+        "tipo_atendimento": "Não faz Pitbull"
     },
     {
         "nome": "Luiz Eduardo Wilms",
@@ -721,7 +721,7 @@
             "Zilker"
         ],
         "categoria": "Central",
-        "tipo_atendimento": "Todos",
+        "tipo_atendimento": "ST (Manhã) Austin (Tarde)",
         "zip_code": ""
     },
     {
@@ -800,7 +800,7 @@
             "Zilker"
         ],
         "categoria": "Central",
-        "tipo_atendimento": "Todos",
+        "tipo_atendimento": "ST (Manhã) Austin (Tarde)",
         "zip_code": ""
     },
     {
