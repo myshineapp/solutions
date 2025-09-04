@@ -21,29 +21,26 @@ def home_page():
     st.title("Seja bem vindo, Brother N' Shine!")
     st.markdown("---")
     
-    # Adicionando estilo CSS para os botões do mural
+    # Adicionando estilo CSS para as caixas de links
     st.markdown("""
         <style>
-            .stButton > button.mural-button {
-                background: #f65a93 !important;
-                color: white !important;
-                border: 1px solid #f65a93 !important;
-                width: 100%; /* Garante que o botão ocupe a largura total */
-                margin-bottom: 5px; /* Adiciona um pequeno espaçamento entre os botões */
+            .link-container {
+                background-color: #f65a93;
+                border-radius: 5px;
+                padding: 10px;
+                margin-bottom: 10px;
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
             }
-            .stButton > button.mural-button:hover {
-                background: #f770a3 !important; /* Cor um pouco mais clara no hover */
+            .link-container a {
+                color: white;
+                text-decoration: none;
+                font-size: 1.2rem;
+                font-weight: bold;
+                display: block;
+                text-align: center;
             }
-            .stButton > button.mural-button:active,
-            .stButton > button.mural-button:focus,
-            .stButton > button.mural-button:checked {
-                background: #f65a93 !important;
-                color: white !important;
-            }
-            /* Estilo para remover a borda e padding do container do botão para melhor alinhamento */
-            div[data-testid="column"] {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
+            .link-container a:hover {
+                text-decoration: underline;
             }
         </style>
     """, unsafe_allow_html=True)
@@ -56,11 +53,7 @@ def home_page():
 
     if st.session_state.links:
         for link_data in st.session_state.links:
-            st.markdown(
-                f'<a href="{link_data["url"]}" target="_blank" style="text-decoration: none;">'
-                f'<button class="mural-button">{link_data["title"]}</button>'
-                f'</a>',
-                unsafe_allow_html=True
-            )
+            with st.container():
+                st.markdown(f'<div class="link-container"><a href="{link_data["url"]}" target="_blank">{link_data["title"]}</a></div>', unsafe_allow_html=True)
     else:
         st.info("Nenhum link adicionado ainda.")
