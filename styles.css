@@ -39,7 +39,7 @@ body, p, div, span { }
 }
 /* ===== Tags do Multiselect ===== */
 [data-baseweb="tag"] {
-    background: #000000 !important; /* rosa da sua paleta */
+    background: #f65a93 !important; /* rosa da sua paleta */
     color: #ffffff !important;
     border: none !important;
     border-radius: 6px !important;
@@ -66,9 +66,9 @@ body, p, div, span { }
     background: #e9e9e9 !important;
 }
 .stButton > button:active, .stButton > button:focus, .stButton > button:checked {
-    background: #000000 !important; /* selecionado */
+    background: #f65a93 !important; /* selecionado */
     color: #ffffff !important;
-    border: 1px solid #000000 !important;
+    border: 1px solid #f65a93 !important;
 }
 /* ===== Sidebar (opcional, mantendo minimalista) ===== */
 [data-testid="stSidebar"] {
@@ -84,11 +84,11 @@ body, p, div, span { }
     border: 0 !important;
 }
 [data-testid^="stSidebarNav-Item"][aria-selected="true"] {
-    background: #000000 !important;
+    background: #f65a93 !important;
     color: #ffffff !important;
 }
 /* ===== Títulos ===== */
-h1, h2, h3 { color: black !important; font-weight: 700; }
+h1, h2, h3 { color: #f9d26c !important; font-weight: 700; }
 /* Força a cor da fonte das tags para branco */
 [data-baseweb="tag"], [data-baseweb="tag"] * {
     color: #ffffff !important;
@@ -108,7 +108,7 @@ body, p, div, span {
 }
 /* ===== Mensagens de Alerta ===== */
 .stAlert {
-    background-color: #000000 !important; /* fundo preto */
+    background-color: #f65a93 !important; /* fundo rosa */
     border: 1px solid #e0e0e0 !important; /* borda sutil */
     border-radius: 6px !important;
     color: #ffffff !important; /* texto branco */
@@ -119,7 +119,7 @@ body, p, div, span {
 /* ===== Títulos ===== */
 h1 {
     font-weight: 700 !important; /* bem bold */
-    color: #000000 !important;
+    color: #fac560 !important;
 }
 h2 {
     font-weight: 600 !important;
@@ -158,6 +158,6 @@ button:hover, a:hover, [data-baseweb="select"] > div:hover, [data-testid^="stSid
 .metric-value-compact {
     font-size: 1.3rem; /* Fonte um pouco menor para o valor */
     font-weight: 700 !important;
-    color: #000000 !important;
+    color: #fac560 !important;
     margin: 0;
 }
