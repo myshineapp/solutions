@@ -1079,7 +1079,7 @@
             "Kendall",
             "Aventura"
         ],
-        "zip_code": "17903",
+        "zip_code": "33020",
         "categoria": "Central",
         "tipo_atendimento": "Todos"
     },
@@ -1187,5 +1187,6 @@
         "cidades": []
     }
 ]
+
 
 
